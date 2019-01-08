@@ -1,0 +1,37 @@
+
+/* GERAL */
+body { overflow-x: hidden; font-family: 'Montserrat', sans-serif; }
+
+.router-link-exact-active{
+    background-color: #003366 !important;
+    color: #fff !important;
+}
+body *{
+    transition: .4s;
+}
+.logo-hen a, .logo-hen h1{
+    font-size: 28px;
+    width: fit-content;
+    font-weight: 700;
+    line-height: .9;
+    color: #003366 !important;
+}
+.logo-hen a span, .logo-hen h1 span{
+    font-size: 28px;
+    color: red;
+}
+.carro-top .slick-prev:before,  .carro-top .slick-next::before{
+    font-size:  0 !important;
+}
+
+.slide-fade-enter-active {
+    transition: all .4s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active em versões anteriores a 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+  }
