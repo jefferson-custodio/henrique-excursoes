@@ -18,7 +18,7 @@ import Home from '@/pages/Home'
 import Servicos from '@/pages/Servicos'
 import Contato from '@/pages/Contato'
 import TabelasTecnicas from '@/pages/TabelasTecnicas'
-import QuemSomos from '@/pages/QuemSomos'
+import FrotaTuristica from '@/pages/Frota'
 import Produtos from '@/pages/Produtos'
 
 //filter 
@@ -37,10 +37,17 @@ const router = new Router({
     { path: '/servicos', component: Servicos },
     { path: '/contato', component: Contato },
     { path: '/tabelas-tecnicas', component: TabelasTecnicas },
-    { path: '/quem-somos', component: QuemSomos },
+    { path: '/frota-turistica', component: FrotaTuristica },
     { path: '/produtos', component: Produtos },
   ], 
   mode: 'history',
+  scrollBehavior ( to ) {
+    if (!to.params.tabId ) {
+      $('html, body').animate({ scrollTop:0 }, { duration: "slow" });
+    }
+  $('#navbarNavDropdown').collapse('hide');
+  return false;
+}
   
 })
 
