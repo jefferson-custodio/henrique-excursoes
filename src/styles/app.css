@@ -1,6 +1,6 @@
 
 /* GERAL */
-body { overflow-x: hidden; font-family: 'Montserrat', sans-serif; }
+body { overflow-x: hidden; font-family: 'Montserrat', sans-serif;}
 
 .router-link-exact-active{
     background-color: #003366 !important;
@@ -44,18 +44,46 @@ body *{
 .fixed .header-flex {
     height: 70px;
 }
-
-/*  */
-
-
-/*  */
-
+.button-a {
+    color: #fff;
+    background-color: #ff0000;
+    display: flex;
+    width: 250px;
+    border-radius: 30px;
+    margin: auto;
+    padding: 10px;
+    justify-content: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: #fff 2px solid;
+}
+.button-a:hover, .button-a:focus {
+    transform: scale(1.1);
+    text-decoration: none;
+    color: #fff;
+  } 
+.banner-insta .slick-next:before, .banner-insta .slick-prev:before {
+    display: none;
+}
+.slick-arrow i{
+    font-size: 55px !important;
+}
+.banner-insta .slick-prev i{
+    position: absolute;
+    right: 0px;
+}
+@media(min-width: 993px){
+    .wrap-nav-mobile{display: none;}
+}
 @media(max-width: 992px){
     .nav-header{display: none;}
     .icone-header{display: block !important;}
+
 }
 @media(min-width: 992px){
-    .frota-content .left-bus img {
-        height: 190px;
-    }
+    .frota-content .left-bus img {height: 190px;}
+}
+@media(max-width: 480px){
+    .banner-insta .slick-next i, .banner-insta .slick-pre i { font-size: 18px; position: absolute;}
+    .banner-insta .slick-next i{position: absolute; left: 0px;}
 }

@@ -69,11 +69,13 @@
   </div>
 </template>
 <style scoped>
+
 .frota-content .wrap-bus {
   border: 3px solid #003366;
 }
 .frota-content {
   padding-top: 120px;
+  min-height: calc(100vh - 50px);
 }
 .frota-content .frota-turistica .row{
   margin: 10px -10px;
@@ -121,16 +123,11 @@
 </style>
 
 <script>
-
-import BgTop from '@/pages/modules/BgTop'
-import BannerStatic from '@/pages/modules/BannerStatic'
   
 export default {
-  name: 'home',
+  name: 'frota',
   
   components: {
-    'bg-top' : BgTop,
-    'banner-static' : BannerStatic
   },
   data: function () {
     return {

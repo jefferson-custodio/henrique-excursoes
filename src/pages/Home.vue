@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <section class="top-pag">
-      <div class="top-content">
+      <div class="wrap-top-content">
+        <div class="top-content">
         <div class="content-left">
           <div class="logo-hen">
             <h1><span>Henrique</span> <br> Excursões</h1>
@@ -30,13 +31,15 @@
           </div>
         </div>
       </div>
+      </div>
+      
     </section>
     <div class="padding"></div>
     <div class="promo promo-1">
       <div class="container">
         <h2>Querendo embarcar em uma Excursão ?</h2>
         <p>Então não perca mais tempo !</p>
-        <li><router-link :to="'/excursoes'">Pacotes de Viagem</router-link></li>
+        <li><router-link class="button-a" :to="'/excursoes'">Pacotes de Viagem</router-link></li>
       </div>
     </div>
     <div class="padding"></div>
@@ -56,6 +59,10 @@
         </div>
       </div>
     </section>
+    <div class="padding"></div>
+    <div class="content-after-ap">
+      <banner-inta></banner-inta>
+    </div>
   </div>
 </template>
 <style scoped>
@@ -65,6 +72,11 @@
   background-position: center;
   height: calc(99vh - 110px);
   margin-top: 110px;
+}
+.wrap-top-content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 .top-content {
   height: 100%;
@@ -123,7 +135,8 @@
 .promo {
   display: flex;
   width: 100%;
-  height: 250px;
+  min-height: 250px;
+  padding: 60px 0;
   background-image: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('/static/img/swimming-pool.jpg');
   background-size: cover;
   background-position: center;
@@ -145,23 +158,7 @@
 .promo li{
   list-style: none !important;
 }
-.promo a {
-  color: #fff;
-  background-color: #ff0000;
-  display: flex;
-  width: 250px;
-  border-radius: 30px;
-  margin: auto;
-  padding: 10px;
-  justify-content: center;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: #fff 2px solid;
-}
-.promo a:hover, .promo a:focus {
-  transform: scale(1.1);
-  text-decoration: none;
-} 
+
 .about-icon-right {
   width: 100%;
   display: flex;
@@ -192,19 +189,42 @@
   text-decoration: none;
 }
 .content-after-promo {
-  padding-top: 25px;
+  padding: 40px 5px;
 }
+@media(max-width: 904px){
+  .logo-hen h1, .logo-hen h1 span{font-size: 80px;}
+}
+@media(max-width: 804px){
+  .wrap-top-content{display: flex;align-items: center;}
+  .top-content{display: block; height: fit-content !important; width: 100%;}
+  .content-right{width: 100%;}
+  .carro-top{ display: block; margin: auto; margin-top: 30px;}
+  .about-icon-right{padding-top: 40px;}
+}
+@media(max-width: 505px){
+  .logo-hen h1, .logo-hen h1 span{font-size: 60px;}
+}
+@media(max-width:480px){
+    .logo-hen h1, .logo-hen h1 span{font-size: 40px;}
+}
+@media(max-width:350px){
+    .carro-top-content figure img {width: 100px;}
+    .carro-top-content figure figcaption{font-size: 18px;}
+    .carro-top{ margin-top: 0px;}
+    .carro-top-content{ height: 140px;}
+}
+
 </style>
 
 <script>
 
-import BgTop from '@/pages/modules/BgTop'
+import BannerInsta from '@/pages/modules/BannerInsta'
   
 export default {
   name: 'home',
   
   components: {
-    'bg-top' : BgTop,
+    'banner-inta' : BannerInsta,
   },
   data: function () {
     return {
@@ -230,6 +250,7 @@ export default {
       }, 1000);
     })
     });
+
   },
   methods: {
     

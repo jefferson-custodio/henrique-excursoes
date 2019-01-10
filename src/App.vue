@@ -32,7 +32,7 @@
           <ul>
             <li><router-link :to="'/'">Home</router-link></li>
             <li><router-link :to="'/excursoes'">Pacotes de Viagem</router-link></li>
-            <li><router-link :to="'/excursoes'">Nossa Frota Turística Particular</router-link></li>
+            <li><router-link :to="'/frota-turistica'">Nossa Frota Turística Particular</router-link></li>
             <li><router-link :to="'/contato'">Contato</router-link></li>
           </ul>
         </nav>
