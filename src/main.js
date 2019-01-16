@@ -19,7 +19,7 @@ import Servicos from '@/pages/Servicos'
 import Contato from '@/pages/Contato'
 import TabelasTecnicas from '@/pages/TabelasTecnicas'
 import FrotaTuristica from '@/pages/Frota'
-import Produtos from '@/pages/Produtos'
+import Pacotes from '@/pages/Pacotes'
 
 //filter 
 // Vue.filter('truncate', function (text, stop, clamp) {
@@ -38,7 +38,7 @@ const router = new Router({
     { path: '/contato', component: Contato },
     { path: '/tabelas-tecnicas', component: TabelasTecnicas },
     { path: '/frota-turistica', component: FrotaTuristica },
-    { path: '/produtos', component: Produtos },
+    { path: '/pacotes', component: Pacotes },
   ], 
   mode: 'history',
   scrollBehavior ( to ) {

@@ -2,7 +2,7 @@
     <div class="banner-insta ">
         <div class="banner-content container">
             <h2>últimas Viagens</h2>
-            <i class="fab fa-instagram"></i>
+            <span><i class="fab fa-instagram"></i> @henriqueexcusoes</span>
             <div class="row">
                 <div class="col-md-8">
                     <div class="slider-inta">
@@ -17,7 +17,7 @@
             </div>
             <div class="wrap-button">
                 <div class="button-inta button">
-                   <a class="button-a" href="#"><i class="fab fa-instagram"></i>Instagram</a> 
+                   <a class="button-a" href="https://www.instagram.com/henriqueexcursoes/"><i class="fab fa-instagram"></i>Instagram</a> 
                 </div>
                 <div class="button-face button">
                     <a class="button-a" href="#"><i class="fab fa-facebook-f"></i>Facebook</a>
@@ -57,7 +57,7 @@
     display: block !important;
     width: 100%;
     margin: auto;
-    border-radius: 20px;
+    border-radius: 5px;
     object-fit: cover;
 }
 .slider-inta-nav {
@@ -135,7 +135,7 @@ mounted: function () {
 },
 methods: {
     getInstaCarro(){
-      this.$http.get('https://api.instagram.com/v1/users/self/media/recent/?access_token=1791831960.351689a.774f2b4a20f54295b5370bd739104452')
+      this.$http.get('https://api.instagram.com/v1/users/self/media/recent/?access_token=10346380246.4e1b17b.e23bfc3c8edb436eb47af87b8d09105e')
       .then((response) =>{
         var instaImgs = response.body.data;
         if (instaImgs.length >= 25) {

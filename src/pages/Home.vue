@@ -39,7 +39,7 @@
       <div class="container">
         <h2>Querendo embarcar em uma Excursão ?</h2>
         <p>Então não perca mais tempo !</p>
-        <li><router-link class="button-a" :to="'/excursoes'">Pacotes de Viagem</router-link></li>
+        <li><router-link class="button-a" :to="'/pacotes'">Pacotes de Viagem</router-link></li>
       </div>
     </div>
     <div class="padding"></div>
@@ -61,7 +61,7 @@
     </section>
     <div class="padding"></div>
     <div class="content-after-ap">
-      <banner-inta></banner-inta>
+      <banner-insta></banner-insta>
     </div>
   </div>
 </template>
@@ -90,7 +90,7 @@
 }
 .logo-hen {
   width: fit-content;
-  padding: 0 40px;
+  padding:0 0 0 40px;;
   border-left: 10px solid #003366;
 }
 .content-right {
@@ -123,14 +123,6 @@
   color: red;
   font-weight: 500;
   line-height: .95;
-}
-.padding {
-  width: 100%;
-  height: 1px;
-  background-color: #fff;
-  box-shadow: 0 0 8px 8px #fff;
-  position: relative;
-  z-index: 1;
 }
 .promo {
   display: flex;
@@ -202,16 +194,10 @@
   .about-icon-right{padding-top: 40px;}
 }
 @media(max-width: 505px){
-  .logo-hen h1, .logo-hen h1 span{font-size: 60px;}
+  .top-content{zoom: 80%;}
 }
-@media(max-width:480px){
-    .logo-hen h1, .logo-hen h1 span{font-size: 40px;}
-}
-@media(max-width:350px){
-    .carro-top-content figure img {width: 100px;}
-    .carro-top-content figure figcaption{font-size: 18px;}
-    .carro-top{ margin-top: 0px;}
-    .carro-top-content{ height: 140px;}
+@media(max-width:400px){
+  .top-content{zoom: 62%;}
 }
 
 </style>
@@ -224,7 +210,7 @@ export default {
   name: 'home',
   
   components: {
-    'banner-inta' : BannerInsta,
+    'banner-insta' : BannerInsta,
   },
   data: function () {
     return {

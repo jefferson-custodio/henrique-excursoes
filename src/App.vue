@@ -5,7 +5,7 @@
         <div class="container">
           <div class="top-header-content">
             <span><i class="fas fa-map-marker-alt"></i>Mauá - SP</span>
-            <span><i class="fab fa-whatsapp"></i><a href="https://api.whatsapp.com/send?1=pt_BR&amp;phone=5511975691249">(11) 9 7569-1249</a></span>
+            <span><i class="fab fa-whatsapp"></i><a target="_blank" href="https://api.whatsapp.com/send?1=pt_BR&amp;phone=5511975691249">(11) 9 7569-1249</a></span>
           </div>
         </div>
       </div>
@@ -13,12 +13,12 @@
         <div class="container">
           <div class="header-flex">
             <div class="logo-hen">
-              <a><span>Henrique</span> <br> Excursões</a>
+              <a href="www.henriqueexcursoes.com.br"><span>Henrique</span> <br> Excursões</a>
             </div>
             <nav class="nav-header">
               <ul>
                 <li><router-link :to="'/'">Home</router-link></li>
-                <li><router-link :to="'/excursoes'">Pacotes de Viagem</router-link></li>
+                <li><router-link :to="'/pacotes'">Pacotes de Viagem</router-link></li>
                 <li><router-link :to="'/frota-turistica'">Nossa Frota Turística Particular</router-link></li>
                 <li><router-link :to="'/contato'">Contato</router-link></li>
               </ul>
@@ -31,7 +31,7 @@
         <nav class="nav-mobile">
           <ul>
             <li><router-link :to="'/'">Home</router-link></li>
-            <li><router-link :to="'/excursoes'">Pacotes de Viagem</router-link></li>
+            <li><router-link :to="'/pacotes'">Pacotes de Viagem</router-link></li>
             <li><router-link :to="'/frota-turistica'">Nossa Frota Turística Particular</router-link></li>
             <li><router-link :to="'/contato'">Contato</router-link></li>
           </ul>
@@ -58,7 +58,7 @@
 header {
   display: block;
   position: relative;
-  z-index: 2;
+  z-index: 3;
   background-color: #fff;
   position: fixed !important;
   width: 100%;
@@ -155,8 +155,11 @@ footer {
 .nav-on {
   height: 175px !important;
   transition: .6s !important;
+  z-index: 3;
 }
-
+@media(max-width: 330px){
+  .nav-on {height: 190px !important;}
+}
 
 .nav-mobile ul {
   padding: 0 !important;
@@ -176,6 +179,10 @@ footer {
   text-transform: uppercase;
   padding: 10px 15px;
 }
+.logo-hen a:hover{
+  text-decoration: none;
+}
+
 </style>
 
 
@@ -211,7 +218,6 @@ export default {
        }
       })
     })
-      
   },
   methods: {
     
