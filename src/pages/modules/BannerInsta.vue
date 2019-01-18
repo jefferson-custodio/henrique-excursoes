@@ -6,12 +6,12 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="slider-inta">
-                        <div class="item-slider" v-for="(item, index) in idImgs" :key="index"><a target="_blank" :href="item.link"><span class="local" v-if="item.location == null ? false : true "> {{ item.location.name }} </span> <span class="descricao">{{ item.caption.text }}</span><img :src="item.images.standard_resolution.url" :alt="item.caption.text"></a></div>
+                        <div class="item-slider" v-for="(item, index) in idImgs" :key="index"><a target="_blank" :href="item.link"><span class="local" v-if="item.location == null ? false : true "> {{ item.location.name }} </span> <span class="descricao" v-if="item.caption == null ? false : true ">{{ item.caption.text }}</span><img :src="item.images.standard_resolution.url" alt="imagem do instagram"></a></div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="slider-inta-nav">
-                        <div class="item-slider-nav"  v-for="(item, index) in idImgs" :key="index"><img :src="item.images.standard_resolution.url" :alt="item.caption.text"></div>
+                        <div class="item-slider-nav"  v-for="(item, index) in idImgs" :key="index"><img :src="item.images.standard_resolution.url" alt="imagem do instagram"></div>
                     </div>
                 </div>
             </div>

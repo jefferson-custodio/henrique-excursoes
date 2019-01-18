@@ -59,13 +59,37 @@
               <li><i class="fas fa-calendar-day"></i>{{ item.data }}</li>
             </ul>
             <div class="button-card">
-              <router-link :to="'/contato'">Reserve Aqui</router-link>
+              <router-link class="button-a" :to="'/contato'">Reserve Aqui</router-link>
             </div>
-            
           </div>
-          
         </div>
           <img class="img-line" src="/static/img/Cordinha-dos-Cards-Alta-Resolução.png" alt="img-corrente">
+        </div>
+      </div>
+    </section>
+    <div class="wrap-div-rot div-rot-2">
+      <div class="div-title-rot title-rot-2">
+        <h2>Próximas <br> Viagens</h2>
+      </div>
+    </div>
+    <section class="wrap-proximas">
+      <div class="container">
+        <div class="proximas-viagens-caro">
+          <div v-for="(item, index) in nextViagemInfo" :key="index" class="proximas-viagens">
+            <div class="wrap-title-pa">
+              <div class="borda-left-title">
+                <div>
+                  <div class="buble-border"><div class="buble-2"></div></div>
+                </div>
+              </div>
+              <div class="right-title"><h2>{{ item.local }}</h2></div>
+            </div>
+            <figure>
+              <img :src="item.link" alt="">
+              <figcaption></figcaption>
+            </figure>
+          </div>
+
         </div>
       </div>
     </section>
@@ -132,16 +156,21 @@
   transform: translateY(-30px);
 }
 .div-title-rot{
+  display: flex;
+  align-items: center;
   background-color: #003366;
   width: 120vw;
-  height: 200px;
+  height: 300px;
   clip-path: polygon(0% 100%, 0% -19%, 100% 0%, -48% 123%);
+}
+.title-rot-2{
+  background-color: rgb(255, 0, 0);
 }
 .div-title-rot h2{
   color: #fff;
   font-size: 60px;
   font-weight: 700;
-  padding: 40px 0 0 25px;
+  padding: 0 0 60px 20px;
 }
 
 .frag-row {
@@ -305,9 +334,26 @@
   color: #003366;
   margin-right: 8px;
 }
+.button-card a:hover, .button-card a:focus{
+  transform: scale(1.1);
+  text-decoration: none;
+}
+.proximas-viagens {
+  position: relative;
+
+}
+.proximas-viagens figure {
+  padding: 15px;
+}
+.proximas-viagens figure img {
+  width: 100%;
+  object-fit: cover;
+  height: 350px;
+}
 @media(min-width: 767px) {
   .wrap-card {height: 250px;}
 }
+
 </style>
 
 <script>
@@ -321,6 +367,7 @@ export default {
   data: function () {
     return {
       viagemInfo: [],
+      nextViagemInfo: [],
 
     }
   },
@@ -328,6 +375,7 @@ export default {
   },
   mounted: function () {   
     this.getViagens();
+    this.getNextViagens();
 
     $('.top-carro').slick({
       dots: true,
@@ -343,9 +391,21 @@ export default {
       this.$http.get('https://pacotes-henrique-vlwvfhugfy.firebaseio.com/.json')
       .then((response) =>{
         this.viagemInfo = response.body.pacotes;
-        console.log(this.viagemInfo);
         this.$nextTick(() => {
           this.sliderPacotes();
+        });
+        
+      }, (response)=>{
+        console.log('Erro em obter arquivos');
+        console.log(response);
+      })
+    },
+    getNextViagens(){
+      this.$http.get('https://proximas-viagens-sfgfhzgghgsd.firebaseio.com/.json')
+      .then((response) =>{
+        this.nextViagemInfo = response.body.viagens;
+        this.$nextTick(() => {
+          this.sliderProximas();
         });
         
       }, (response)=>{
@@ -359,7 +419,18 @@ export default {
           autoplaySpeed: 2500,
           pauseOnHover: true,
         });
-    }
+    },
+    sliderProximas(){
+      $('.proximas-viagens-caro').slick({
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnHover: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      });
+    },
+   
   },
   head: {
     title: {
