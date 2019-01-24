@@ -205,6 +205,10 @@ export default {
         $(".icone-header .fas").removeClass('fa-bars').addClass('fa-times');
       }
     });
+    $(".nav-mobile a").click(function () {
+      $(".wrap-nav-mobile").removeClass('nav-on');
+      $(".icone-header .fas").removeClass('fa-times').addClass('fa-bars');
+    })
     
 
     $(document).ready(function () {

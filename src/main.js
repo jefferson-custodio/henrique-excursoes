@@ -15,9 +15,7 @@ Vue.use(VuePaginate)
 
 // pages
 import Home from '@/pages/Home'
-import Servicos from '@/pages/Servicos'
 import Contato from '@/pages/Contato'
-import TabelasTecnicas from '@/pages/TabelasTecnicas'
 import FrotaTuristica from '@/pages/Frota'
 import Pacotes from '@/pages/Pacotes'
 
@@ -34,9 +32,7 @@ import Pacotes from '@/pages/Pacotes'
 const router = new Router({
   routes: [
     { path: '/', component: Home },
-    { path: '/servicos', component: Servicos },
     { path: '/contato', component: Contato },
-    { path: '/tabelas-tecnicas', component: TabelasTecnicas },
     { path: '/frota-turistica', component: FrotaTuristica },
     { path: '/pacotes', component: Pacotes },
   ], 

@@ -38,9 +38,6 @@
             </div>
             <div class="right-title"><h2>{{ item.local }}</h2></div>
           </div>
-          <div class="categoria">
-            <span><i class="fas fa-map-marker-alt"></i>{{ item.categoria }}</span>
-          </div>
           <div class="row wrap-card">
           <div class="col-md-2 frag-row">
             <div class="circle"></div>
@@ -82,11 +79,11 @@
                   <div class="buble-border"><div class="buble-2"></div></div>
                 </div>
               </div>
-              <div class="right-title"><h2>{{ item.local }}</h2></div>
+              <div class="right-title"><h2>À Partir De {{ item.mes }}</h2></div>
             </div>
             <figure>
               <img :src="item.link" alt="">
-              <figcaption></figcaption>
+              <figcaption>{{ item.local }}</figcaption>
             </figure>
           </div>
 
@@ -295,7 +292,7 @@
 }
 .info-cards li{
   color: #afabac;
-  font-size: 25px;
+  font-size: 24px;
 }
 .info-cards li:first-of-type, .info-cards li:nth-of-type(2){
   display: inline-block;
@@ -322,37 +319,81 @@
   align-items: center;
   justify-content: center;
 }
-.categoria {
-  position: absolute;
-  top: -28px;
-  right: 10px;
-  text-align: right;
-  color: #afabac;
-  font-size: 20px;
-}
-.categoria i{
-  color: #003366;
-  margin-right: 8px;
-}
 .button-card a:hover, .button-card a:focus{
   transform: scale(1.1);
   text-decoration: none;
 }
+.button-card a:active {
+  background-color: #fff;
+  border: 1px solid rgb(148, 11, 75);
+  color: rgb(148, 11, 75);
+}
 .proximas-viagens {
   position: relative;
-
+  display: inline-block;
+  margin: 10px 20px 50px 20px;
+}
+.proximas-viagens-caro {
+  text-align: center;
+}
+.proximas-viagens .wrap-title-pa .right-title, .proximas-viagens .wrap-title-pa .borda-left-title{
+  background-color: #201845;
+}
+.proximas-viagens .wrap-title-pa {
+  left: -10px !important;
+}
+.proximas-viagens .wrap-title-pa .right-title h2{
+  color: rgb(255, 0, 0);
+  padding: 10px;
+  font-weight: 700;
 }
 .proximas-viagens figure {
-  padding: 15px;
+  border: 2px solid rgb(148, 11, 75);
+  padding: 20px;
+  width: 280px;
+  height: 390px;
 }
 .proximas-viagens figure img {
   width: 100%;
   object-fit: cover;
-  height: 350px;
+  height: 280px;
+}
+.proximas-viagens figure figcaption {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: .9;
+  text-align: center;
+  padding: 20px 0;
+
 }
 @media(min-width: 767px) {
   .wrap-card {height: 250px;}
 }
+@media(max-width: 767px){
+  .top-pacotes h1 {font-size: 40px;}
+  .prop-ti h2, .prop-ti h2 span {font-size: 65px;}
+  .frag-row {border: none !important;}
+  .wrap-card .col-md-2, .img-line{display: none !important;}
+  .wrap-card {border: 2px solid #000; border-radius: 20px;}
+  .pacote-de-viagem .wrap-title-pa{left: -30px; transform: rotate(-30deg); top: -45px;}
+  .wrap-card {margin: 86px 0;}
+}
+@media(max-width: 540px){
+  .div-title-rot h2{padding-bottom: 80px; font-size: 45px; line-height: .9;}
+  .div-title-rot{height: 200px;}
+}
+@media(max-width: 505px){
+  .top-content{zoom: 80%;}
+  .top-pacotes h1 {font-size: 30px;}
+  .prop-ti h2, .prop-ti h2 span {font-size: 50px; padding-left: 10px;}
+}
+@media(max-width:400px){
+  .top-content{zoom: 62%;}
+  .div-title-rot h2{padding-bottom: 90px; font-size: 40px;}
+  .div-title-rot{height: 180px;}
+  .proximas-viagens{ margin: 10px 0px 50px 0px;}
+}
+
 
 </style>
 
@@ -381,6 +422,7 @@ export default {
       dots: true,
       infinite: true,
       autoplay: true,
+      arrows:false,
       autoplaySpeed: 3000,
       pauseOnHover: false,
     }
@@ -404,9 +446,9 @@ export default {
       this.$http.get('https://proximas-viagens-sfgfhzgghgsd.firebaseio.com/.json')
       .then((response) =>{
         this.nextViagemInfo = response.body.viagens;
-        this.$nextTick(() => {
-          this.sliderProximas();
-        });
+        // this.$nextTick(() => {
+        //   this.sliderProximas();
+        // });
         
       }, (response)=>{
         console.log('Erro em obter arquivos');
@@ -420,16 +462,49 @@ export default {
           pauseOnHover: true,
         });
     },
-    sliderProximas(){
-      $('.proximas-viagens-caro').slick({
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        pauseOnHover: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-      });
-    },
+  //   sliderProximas(){
+  //     $('.proximas-viagens-caro').slick({
+  //       infinite: true,
+  //       autoplay: true,
+  //       autoplaySpeed: 2000,
+  //       pauseOnHover: true,
+  //       slidesToShow: 3,
+  //       slidesToScroll: 1,
+  //       arrows: true,
+  //       responsive: [
+  //   {
+  //     breakpoint: 992,
+  //     settings: {
+  //       centerMode: true,
+  //       centerPadding: '40px',
+  //       slidesToShow: 2,
+  //       arrows: false,
+  //       slidesToScroll: 1,
+  //     }
+  //   },
+  //   {
+  //     breakpoint: 768,
+  //     settings: {
+  //       arrows: false,
+  //       centerMode: true,
+  //       centerPadding: '40px',
+  //       slidesToShow: 1,
+  //       slidesToScroll: 1,
+  //     }
+  //   },
+  //   {
+  //     breakpoint: 480,
+  //     settings: {
+  //       arrows: false,
+  //       centerPadding: '40px',
+  //       centerMode: true,
+  //       slidesToShow: 1,
+  //       slidesToScroll: 1,
+  //     }
+  //   }
+  // ]
+  //     });
+    // },
    
   },
   head: {
