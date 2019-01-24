@@ -243,11 +243,11 @@ export default {
   },
   head: {
     title: {
-      inner: 'Home'
+      inner: 'Henrique Excursões - Home'
     },
     meta: [{
       name: 'description',
-      content: 'My description here for SEO',
+      content: 'Henrique Excursões é uma empresa localizada em Mauá - SP focada em Excursões para diversos lugares como Prais, Parques Aquáticos e cidades turísticas proporcionando ao cliente o conforto e a segurança dos nossos onibus',
       id: 'description'
     }]
   }

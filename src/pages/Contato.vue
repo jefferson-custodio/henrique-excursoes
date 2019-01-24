@@ -187,7 +187,7 @@ export default {
     },
     meta: [{
       name: 'description',
-      content: 'My description here for SEO',
+      content: 'Entre em contato com a emprese henrique excursões para tirar dúvidas ou contratar pacotes',
       id: 'description'
     }]
   }

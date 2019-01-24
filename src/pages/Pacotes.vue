@@ -513,7 +513,7 @@ export default {
     },
     meta: [{
       name: 'description',
-      content: 'My description here for SEO',
+      content: 'Pacotes de excursões para praias , parques aquáticos , cidades e muito mais ',
       id: 'description'
     }]
   }

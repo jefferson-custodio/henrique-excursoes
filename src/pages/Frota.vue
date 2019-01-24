@@ -144,11 +144,11 @@ export default {
   },
   head: {
     title: {
-      inner: 'Quem Somos'
+      inner: 'Frota Turística'
     },
     meta: [{
       name: 'description',
-      content: 'My description here for SEO',
+      content: 'Frota de onibus da empresa henrique excursões. onibus novos, confortáveis e seguros com ar condicionado, frigobar, banheiro, wi-fi e TV com DVD',
       id: 'description'
     }]
   }
